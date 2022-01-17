@@ -79,15 +79,15 @@ namespace Extractor
         
         private static async Task<bool> PluginTask()
         {
+						if (Core.Me.InCombat || !Core.Me.IsAlive || DutyManager.InInstance || FateManager.WithinFate) return false;
+					
 						await ExtractMateria();
             return true;
         }
 
         internal static async Task ExtractMateria()
         {
-					
-						if (Core.Me.InCombat || !Core.Me.IsAlive || DutyManager.InInstance || FateManager.WithinFate) return false;
-						
+																	
             if (InventoryManager.FilledInventoryAndArmory.Any(x => x.SpiritBond == 100f))
             {
                 Log.Information($"Extracting Materia from gear");
