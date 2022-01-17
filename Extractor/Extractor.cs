@@ -82,7 +82,7 @@ namespace Extractor
 						if (Core.Me.InCombat || !Core.Me.IsAlive || DutyManager.InInstance || FateManager.WithinFate) return false;
 					
 						await ExtractMateria();
-            return true;
+            return false;
         }
 
         internal static async Task ExtractMateria()
