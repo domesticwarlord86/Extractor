@@ -79,7 +79,7 @@ namespace Extractor
         
         private static async Task<bool> PluginTask()
         {
-						if (Core.Me.InCombat || !Core.Me.IsAlive || DutyManager.InInstance || FateManager.WithinFate) return false;
+						if (Core.Me.InCombat || !Core.Me.IsAlive || FateManager.WithinFate) return false;
 					
 						await ExtractMateria();
             return false;
