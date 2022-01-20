@@ -90,6 +90,7 @@ namespace Extractor
 																	
             if (InventoryManager.FilledInventoryAndArmory.Any(x => x.SpiritBond == 100f))
             {
+								await LlamaLibrary.Helpers.GeneralFunctions.StopBusy(leaveDuty: false);
                 Log.Information($"Extracting Materia from gear");
                 await LlamaLibrary.Utilities.Inventory.ExtractFromAllGear();
             }
